@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body,
+			html,
+			div {
+				width: 100%;
+				height: 100%;
+			}
+
+			div {
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+
+			#page1 {
+				background-image: url(img/halloween1.jpg);
+			}
+
+			#page2 {
+				background-image: url(img/halloween2.jpg);
+				display: none;
+			}
+
+			#page3 {
+				background-image: url(img/halloweenMain.jpg);
+				display: none;
+			}
+
+			#page4 {
+				background-image: url(img/charm1.jpg);
+				display: none;
+			}
+
+			#title {
+				position: fixed;
+				left: 315px;
+				top: 100px;
+				animation: titlemove 2s infinite;
+			}
+
+			@keyframes titlemove {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			#box {
+				position: fixed;
+				left: 321px;
+				bottom: 462px;
+				animation: baohe 1s infinite;
+
+			}
+
+			@keyframes baohe {
+				0% {
+					left: 300px;
+				}
+
+				50% {
+					left: 330px;
+				}
+
+				100% {
+					left: 350px;
+				}
+			}
+
+			#pumpkin {
+				position: fixed;
+				left: 315px;
+				top: 100px;
+			}
+
+			#startGame {
+				position: fixed;
+				left: 390px;
+				bottom: 420px;
+			}
+
+			#charm01 {
+				position: fixed;
+				left: 50px;
+				top: 100px;
+				animation: charm01move 4s infinite;
+			}
+
+			@keyframes charm01move {
+				0% {
+					left: 50px;
+				}
+
+				25% {
+					left: 400px;
+					top: 180px;
+				}
+
+				50% {
+					top: 330px;
+					left: 200px;
+				}
+			}
+
+			#charm02 {
+				position: fixed;
+				left: 250px;
+				top: 400px;
+				animation: charm02move 5s infinite;
+			}
+
+			@keyframes charm02move {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 2;
+				}
+			}
+
+			#charm03 {
+				position: fixed;
+				left: 50px;
+				top: 650px;
+				animation: charm03move 5s infinite;
+			}
+
+			@keyframes charm03move {
+				from {
+					left: 600px;
+				}
+
+				to {
+					left: 50px;
+				}
+			}
+
+			#charm04 {
+				position: fixed;
+				left: 500px;
+				top: 50px;
+				animation: charm04move 2s infinite;
+			}
+
+			@keyframes charm04move {
+				from {
+					top: 200px;
+				}
+
+				to {
+					top: 500px;
+				}
+			}
+
+
+			#charm05 {
+				position: fixed;
+				left: 400px;
+				top: 900px;
+				animation: charm05move 4s infinite;
+			}
+
+			@keyframes charm05move {
+				10% {
+					top: 400px;
+				}
+
+				25% {
+					top: 200px;
+				}
+
+				50% {
+					top: 100px;
+				}
+			}
+
+
+			#charm06 {
+				position: fixed;
+				left: 300px;
+				top: 800px;
+				animation: charm06move 5s infinite
+			}
+
+			@keyframes charm06move {
+				from {
+					width: 100px;
+					height: 100px;
+				}
+
+				to {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			#charm07 {
+				position: fixed;
+				right: 50px;
+				bottom: 300px;
+				animation: charm07move 9s infinite;
+			}
+
+			@keyframes charm07move {
+				10% {
+					top: 600px;
+				}
+
+				40% {
+					right: 400px;
+				}
+
+				90% {
+					bottom: 200px;
+				}
+			}
+		</style>
+	    <script>
+			/*function gotosecond(){
+				var page1=document.getElementById("page1"); 
+				page1.style.display ="none";
+				var page2=document.getElementById("page2");
+				page2.style.display="block";
+				}
+			function gotodisanye(){
+				var page2=document.getElementById("page2");
+				page2.style.display="none";
+				var page3=document.getElementById("page3")
+				page3.style.display="block"
+				
+			}
+			*/
+			function gotopage(page){
+				
+				var page1=document.getElementById("page1");
+				var page2=document.getElementById("page2");
+				var page3=document.getElementById("page3");
+				var page4=document.getElementById("page4");
+				page1.style.display="none";
+				page2.style.display="none";
+				page3.style.display="none";
+				page4.style.display="none";
+				var page0="page"+page;
+				var a =document.getElementById(page0);
+				a.style.display="block";
+			}
+			function suijishu(){
+			gotopage(4);
+			var suijishu=Math.floor(Math.random()*7+1);
+			var pic="url(img/charm"+suijishu+".jpg)";
+			//alert(pic);
+			var p4 =document.getElementById("page4");
+            p4.style.backgroundImage=pic;
+			}
+            /*function a1(){
+				gotopage(4);
+				var pic="url(img/charm"+a1+".jpg)";
+				var p4 =document.getElementById("page4");
+				 p4.style.backgroundImage=pic;
+				
+			}*/
+			
+			
+		</script>
+	
+	</head>
+	<body>
+		<div id="page1">
+			<img id="title" src="img/title.png">
+			<img id="box" src="img/box.png" onclick="gotopage(2)">
+		</div>
+		<div id="page2">
+			<img id="pumpkin" src="img/pumpkin.png">
+			<img id="startGame" src="img/startGame.jpg" onclick="gotopage(3)">
+		</div>
+	    <!--<div id="page3">
+			<img id="charm01" src="img/1.png" onclick="a1(1)">
+			<img id="charm02" src="img/2.png" onclick="a1(2)">
+			<img id="charm03" src="img/3.png" onclick="a1(3)">
+			<img id="charm04" src="img/4.png" onclick="a1(4)">
+			<img id="charm05" src="img/5.png" onclick="a1(5)">
+			<img id="charm06" src="img/6.png" onclick="a1(6)">
+			<img id="charm07" src="img/7.png" onclick="a1(7)">
+		</div>-->
+		<div id="page3">
+			<img id="charm01" src="img/1.png" onclick="suijishu()">
+			<img id="charm02" src="img/2.png" onclick="suijishu()">
+			<img id="charm03" src="img/3.png" onclick="suijishu()">
+			<img id="charm04" src="img/4.png" onclick="suijishu()">
+			<img id="charm05" src="img/5.png" onclick="suijishu()">
+			<img id="charm06" src="img/6.png" onclick="suijishu()">
+			<img id="charm07" src="img/7.png" onclick="suijishu()">
+		</div>
+		<div id="page4" onclick="gotopage(3)">
+
+		</div>
+
+	</body>
+</html>
